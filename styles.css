@@ -1,141 +1,243 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f5f7fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure main content grows to fill space between header and footer */
+main {
+  flex: 1;
+}
+
+header {
+  background: #004aad;
+  color: white;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.logo img {
+  height: 40px;        /* fits nicely inside the nav bar */
+  width: auto;         /* maintain aspect ratio */
+  display: block;      /* removes unwanted inline space */
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn {
+  background: #ff3c00;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+
+.service-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1 1 280px;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #004aad;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #002b61;
+  color: white;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS - Minimal tweaks to fit screens without changing layout */
+
+@media (max-width: 768px) {
   html, body {
-    height: 100%;
+    font-size: 14px; /* slightly smaller font for tablets */
   }
   
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    background: #f5f7fa;
-    color: #333;
-    display: flex;
-    flex-direction: column;
+  nav, .highlights, .contact-form, .intro, .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
   }
-  
-  /* Ensure main content grows to fill space between header and footer */
-  main {
-    flex: 1;
-  }
-  
-  header {
-    background: #004aad;
-    color: white;
-    padding: 1rem 0;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 1rem;
-  }
-  
-  nav .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.2rem;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
+
   .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem; /* smaller heading */
   }
-  
+
   .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
   }
-  
-  .hero .btn {
-    background: #ff3c00;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .intro {
-    max-width: 900px;
-    margin: 2rem auto;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .highlights {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 2rem 1rem;
-    gap: 1rem;
-  }
-  
+
   .service-box {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    flex: 1 1 280px;
-    text-align: center;
+    flex-basis: 45%; /* slightly smaller but keep layout */
   }
-  
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 12px; /* smaller font on small phones */
+  }
+
+  nav ul {
+    gap: 0.8rem; /* reduce gap between nav links */
+  }
+
+  .service-box {
+    flex-basis: 90%; /* stack service boxes almost full width */
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
   .contact-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    width: 95%;
   }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contact-form button {
-    background: #004aad;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #002b61;
-    color: white;
-  }
-  
+}
+
+footer h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+footer ul li {
+  margin-bottom: 0.3rem;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.quick-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.quick-links a:hover {
+  color: #ffcc00;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
