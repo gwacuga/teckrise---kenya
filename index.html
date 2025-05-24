@@ -6,26 +6,38 @@
   <meta name="description" content="Teckrise offers graphic design, web development, hosting, mobile and computer app development, and M-Pesa integration services.">
   <meta name="keywords" content="Teckrise, Web Development, Graphic Design, Hosting, Domain, App Development, M-Pesa Integration, Kenya tech company">
   <meta name="author" content="Teckrise">
+  <link rel="icon" href="images/favicon.png" type="image/png" />
   <title>Teckrise</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Teckrise</div>
-      <ul>
+      <div class="logo">
+        <img src="images/logo.png" alt="Teckrise Logo" class="logo-img" />
+        Teckrise
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        &#9776; <!-- This is the hamburger icon -->
+      </button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    
+    </nav>
     <section class="hero">
-      <h1>Empowering Digital Solutions</h1>
-      <p>Need a task done? We are here to offer you the best service in tech.</p>
-      <a href="services.html" class="btn">Explore Our Services</a>
+      <div class="hero-card">
+        <h1>Empowering Digital Solutions</h1>
+        <p>Need a task done? We are here to offer you the best service in tech.</p>
+        <a href="services.html" class="btn">Explore Our Services</a>
+      </div>
     </section>
+    
   </header>
 
   <main>
@@ -53,5 +65,11 @@
   <footer>
     <p>&copy; 2025 Teckrise. All rights reserved.</p>
   </footer>
+  <!-- Your HTML content -->
+
+<script src="script.js"></script>
+</body>
+</html>
+
 </body>
 </html>
