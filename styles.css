@@ -85,6 +85,10 @@ nav ul.nav-links {
   gap: 1.2rem;
   list-style: none;
 }
+nav ul.nav-links {
+  z-index: 1002; /* Ensure it's above the hero's overlay (which is z-index: 0) */
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
